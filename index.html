@@ -1,68 +1,192 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Chocolate cake</title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="recipe.css"/>
-    </head>
-    <body>
+* {
+    overflow: auto;
+}
 
-        <!-- Comment in HTML -->
-        <div class="content">
+body {
+    background-color: #8BA1BB;
+    font-family: Arial;
+    margin: 0;
+}
 
-            <div class="center category">
-                <p class="category">Recipe</p>
-            </div>
+div.content {
+    background-color: white;
+    margin: 40px 8px 8px 8px;
+    padding: 0px 8px 20px 8px;
+    /*min-width: 350px;*/
+    box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.1);
+    overflow: visible;
+}
 
-            <h1>Chocolate cake</h1>
+h1 {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 12px;
+}
 
-            <div class="separator"></div>
+p.description {
+    text-align: center;
+    max-width: 400px;
+    display: inline-block;
+    font-size: 14px;
+}
 
-            <div class="center">
-                <p class="description">"This chocolate cake recipe is a classic. This version of the recipe is fast and quick and your kids will love it."</p>
-            </div>
+.center {
+    text-align: center;
+    width: 100%;
+}
 
-            <div class="info">
-                <img class="center info" src="https://jonathanroux.com/cake.jpg?id=999">
+div.category {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    overflow: visible;
+}
 
-                <table class="info">
-                    <tr>
-                        <th>Difficulty</th>
-                        <th>Preparation</th>
-                        <th>Cooking</th>
-                        <th>Total time</th>
-                    </tr>
-                    <tr>
-                        <td>Easy</td>
-                        <td>10 min</td>
-                        <td>25 min</td>
-                        <td>35 min</td>
-                    </tr>
-                </table>
-            </div>
-            
-            <div>
-                <div class="col1 col">
-                    <h2>Ingredients</h2>
-                    <div class="ingredients">
-                        <p>Dark chocolate: 200g</p>
-                        <p>Butter: 200g</p>
-                        <p>Sugar: 150g</p>
-                        <p>Flour: 80g</p>
-                        <p>Eggs: 4</p>
-                    </div>
-                </div>
+p.category {
+    background-color: black;
+    color: white;
+    display: inline-block;
+    margin-top: -15px;
+    margin-bottom: 0px;
+    padding: 8px 20px;
+    font-weight: bold;
+    font-size: 16px;
+}
 
-                <div class="col2 col">
-                    <h2>Instructions</h2>
-                    <table class="instructions">
-                        <tr><td><p class="number">1</p></td><td class="instruction_step">Melt the chocolate and the butter together</td></tr>
-                        <tr><td><p class="number">2</p></td><td class="instruction_step">Mix the sugar, eggs and the flour</td></tr>
-                        <tr><td><p class="number">3</p></td><td class="instruction_step">Mix everything to get a smooth dough</td></tr>
-                        <tr><td><p class="number">4</p></td><td class="instruction_step">Bake in the oven and do this do that to get a very long text</td></tr>
-                </table>
-                </div>
-            </div>
-        </div>
-    </body> 
-</html>
+div.separator {
+    height: 1px;
+    width: 100px;
+    background-color: black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+div.info {
+    position:relative;
+}
+
+table.info {
+    position:absolute; 
+    bottom:0; 
+    width: 100%; color: white;
+    background-color: #6C829DC0;
+    height: 80px
+}
+
+/* All the td of the table that has a info class */
+table.info td {
+    text-align: center;
+    vertical-align: top;
+    font-size: 12px;
+}
+
+table.info th {
+    vertical-align: bottom;
+    padding-bottom: 8px;
+    font-size: 14px;
+}
+
+img.info {
+    display: block;
+    max-height: 400px;
+    object-fit: cover;
+    min-height: 200px;
+    background-color: lightgray;
+}
+
+div.col {
+    width: 100%;
+    margin-top: 20px;
+}
+
+div.col h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 15px;
+    border-bottom: 5px solid #6C829D;
+    padding-bottom: 5px;
+}
+
+div.col1 {
+    display: inline-block;
+    margin-bottom : 20px;
+}
+
+div.col2 {
+    /*float: right;*/
+}
+
+div.ingredients p {
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid lightgray;
+    padding: 8px 0;
+    margin-top: 4px;
+    margin-bottom: 0;
+}
+
+table.instructions p.number {
+    background-color: #6C829D;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    padding-top: 4px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    margin: 0;
+}
+
+table.instructions td.instruction_step {
+    padding-left: 10px;
+    padding-bottom: 10px;
+    font-size: 14px;
+}
+
+table.instructions td {
+    vertical-align: top;
+}
+
+table.instructions tr {
+    height: 40px;
+}
+
+/* DESKTOP */
+@media only screen and (min-width: 750px){
+    div.content {
+        margin: 60px 10% 80px 10%;
+        padding: 0px 30px 30px 30px;
+        min-width: 350px;
+        max-width: 650px;
+    }
+    table.info {
+        height: 80px
+    }
+
+    /* All the td of the table that has a info class */
+    table.info td {
+        font-size: 14px;
+    }
+
+    table.info th {
+        font-size: 16px;
+    }
+    div.col {
+         width: 45%;
+    }
+    div.col1 {
+        margin-right: 10%;
+    }
+    div.col2 {
+        float: right;
+    }
+}
+@media only screen and (min-width: 900px) {
+    div.content {
+        margin-left:auto;
+        margin-right: auto;
+        width: 650px;
+    }
+}
